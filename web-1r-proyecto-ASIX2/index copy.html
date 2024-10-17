@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión a MySQL</title>
+</head>
+<body>
+    <h1>Formulario de Ejemplo</h1>
+    <input type="text" id="dato" placeholder="Introduce un dato">
+    <button onclick="enviarDatos()">Enviar</button>
+
+    <script>
+        function enviarDatos() {
+            const dato = document.getElementById("dato").value;
+
+            fetch("http://localhost/xampp/myconexion.php", { // Asegúrate de cambiar el puerto si es necesario
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `dato=${encodeURIComponent(dato)}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log("Respuesta del servidor:", data);
+                alert("Datos enviados con éxito");
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
