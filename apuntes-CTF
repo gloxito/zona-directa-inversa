@@ -1,8 +1,10 @@
 Ruta diccionarios > /usr/share/wordlists/
 
+Página para buscar archivos: https://gtfobins.github.io/
+
 arp-scan -l   > escanear todas las IP de la red
 
-netdiscover /r @ red/24
+netdiscover -r red/24
 
 nmap -p- --open --min-rate 5000 -sSCV -n -Pn IP-MAQUINA -vvv -oN resultados.txt
 
